@@ -1,0 +1,67 @@
+"""Palette, fonts, and layout constants for the office view."""
+
+from silicon_office.common.constants import (
+    STATE_ASKING,
+    STATE_ERROR,
+    STATE_IDLE,
+    STATE_WORKING,
+)
+
+BG_COLOR = (30, 32, 40)
+FLOOR_COLOR_A = (44, 47, 58)
+FLOOR_COLOR_B = (40, 43, 53)
+DESK_COLOR = (92, 68, 48)
+DESK_TOP_COLOR = (120, 90, 64)
+PAPER_COLOR = (54, 57, 68)
+PAPER_LINE_COLOR = (150, 155, 168)
+
+TEXT_COLOR = (235, 235, 240)
+SUBTEXT_COLOR = (170, 175, 185)
+BANNER_COLOR = (220, 90, 90)
+DISCONNECTED_OVERLAY = (10, 10, 14, 140)
+
+USAGE_BAR_BG_COLOR = (24, 25, 32)
+USAGE_BAR_BORDER_COLOR = (55, 58, 70)
+USAGE_TEXT_COLOR = (225, 227, 232)
+USAGE_LABEL_COLOR = (140, 145, 158)
+
+STATE_COLORS = {
+    STATE_IDLE: (90, 130, 200),
+    STATE_WORKING: (90, 190, 110),
+    STATE_ASKING: (235, 165, 60),
+    STATE_ERROR: (215, 70, 70),
+}
+
+STATE_LABELS = {
+    STATE_IDLE: "Idle",
+    STATE_WORKING: "Working",
+    STATE_ASKING: "Asking",
+    STATE_ERROR: "Error",
+}
+
+FONT_SIZE_NAME = 30
+FONT_SIZE_LABEL = 24
+FONT_SIZE_ID = 20
+FONT_SIZE_BANNER = 20
+FONT_SIZE_USAGE = 16
+
+PIXEL_SCALE = 7
+FPS = 30
+WINDOW_TITLE = "Silicon Office"
+SIDEBAR_WIDTH = 360
+DESK_MAX_WIDTH = 320
+DESK_HEIGHT = 200
+DESK_MARGIN = 28
+DESK_MIN_GAP = 4
+USAGE_BAR_HEIGHT = 34
+SPAWN_ANIM_SECONDS = 0.3
+DESPAWN_ANIM_SECONDS = 0.4
+ASKING_FLASH_SECONDS = 1.0
+
+
+def color_for_state(state: str) -> tuple[int, int, int]:
+    return STATE_COLORS.get(state, STATE_COLORS[STATE_IDLE])
+
+
+def label_for_state(state: str) -> str:
+    return STATE_LABELS.get(state, state)
